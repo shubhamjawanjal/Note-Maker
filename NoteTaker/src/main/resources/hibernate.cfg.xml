@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+ <hibernate-configuration>
+ 	<session-factory>
+ 		<!-- Connection driver of database  -->
+ 		<property name="connection.driver_class">com.mysql.jdbc.Driver</property>
+ 		
+ 		<!-- connection of url of databse to use -->
+ 		<property name="connection.url">jdbc:mysql://localhost:3306/myhiber</property>		
+ 		
+ 		<!-- connection for username of database -->
+ 		<property name="connection.username">root</property>
+ 		<!-- connection password of database -->
+ 		<property name="connection.password">root</property>
+ 		
+ 		<!-- A hibernate dialect gives information to the framework 
+ 			of how to convert hibernate queries(HQL) into native SQL queries.
+ 			Since Hibernate is database agnostic. It can work with different databases -->
+ 		<property name="dialect">org.hibernate.dialect.MySQL5Dialect</property>
+ 		
+ 		<!-- Automatic validate or create database(update and create can be used) -->
+ 		<property name="hbm2ddl.auto">create</property>
+ 		
+ 		<!-- use to show which query is fired by hibernate -->
+ 		<property name="show_sql">true</property>
+ 		
+ 		<mapping class="com.entities.Note"/>
+ 		
+ 		
+ 		
+ 	</session-factory>
+ </hibernate-configuration>
